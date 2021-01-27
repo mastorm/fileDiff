@@ -27,11 +27,11 @@ public class Main {
         final String sep = File.separator;
         final String workingDir = "C:" + sep + "java" + sep + "comparer" + sep;
 
-        var left = readerFromPath(workingDir + "left.txt");
-        var right = readerFromPath(workingDir + "right.txt");
+        final var left = readerFromPath(workingDir + "left.txt");
+        final var right = readerFromPath(workingDir + "right.txt");
 
         EqualityComparer comparer = new LineEqualityComparer();
-        var mismatches = comparer.compare(left, right);
+        final var mismatches = comparer.compare(left, right);
 
         for(var mismatch : mismatches) {
             System.out.println("Mismatch on Line " + mismatch.getStartingAt());

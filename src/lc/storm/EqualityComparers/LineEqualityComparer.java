@@ -25,12 +25,12 @@ public class LineEqualityComparer implements EqualityComparer{
             if(!readyToRead(left, right)) {
                 throw new EqualityComparerException("Streams where not ready to read from!");
             }
-            List<Mismatch> mismatches = new LinkedList<>();
+            final List<Mismatch> mismatches = new LinkedList<>();
 
             int rowNumber = 0;
             while(left.ready()) {
                 rowNumber++;
-                String leftLine = left.readLine();
+                final String leftLine = left.readLine();
                 String rightLine = null;
                 if(right.ready()) {
                     rightLine = right.readLine();
